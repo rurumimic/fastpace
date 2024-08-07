@@ -27,5 +27,5 @@ fastpace
 
 ```bash
 >>> import fastpace
->>> fastpace.run()
+>>> fastpace.start_app()
 ```

@@ -11,8 +11,7 @@ pip install -U pip build
 ## Development mode
 
 ```bash
-pip install -e . --config-settings editable_mode=strict
-```
+pip install -e .
 
 ## Run
 

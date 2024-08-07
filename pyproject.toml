@@ -11,10 +11,10 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["app"]
 include = ["fastpace*"]
 exclude = ["fastpace.tests*"]
 namespaces = false
 
 [project.scripts]
-fastpace = "fastpace:run"
+fastpace = "fastpace:start_app"
