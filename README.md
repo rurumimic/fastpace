@@ -29,3 +29,9 @@ fastpace
 >>> import fastpace
 >>> fastpace.start_app()
 ```
+
+#### Run FastAPI Dev
+
+```bash
+fastapi dev
+```

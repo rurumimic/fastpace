@@ -17,4 +17,4 @@ exclude = ["fastpace.tests*"]
 namespaces = false
 
 [project.scripts]
-fastpace = "fastpace:start_app"
+fastpace = "fastpace.__main__:start"
