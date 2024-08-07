@@ -1,3 +1,18 @@
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastpace"
+version = "0.0.1"
+dependencies = [
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fastpace*"]
+exclude = ["fastpace.tests*"]
+namespaces = false
+
+[project.scripts]
+fastpace = "fastpace:run"
