@@ -6,6 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "fastpace"
 version = "0.0.1"
 dependencies = [
+  "fastapi[standard]",
+  "pydantic-settings"
 ]
 
 [tool.setuptools.packages.find]
