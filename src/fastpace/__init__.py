@@ -1,2 +1,2 @@
 def run():
-    print('Fast Pace')
+    print("Fast Pace")
