@@ -12,6 +12,8 @@ python -m build
 ### Install
 
 ```bash
+pip install -e .
+pip install -e '.[dev]'
 pip install dist/fastpace-0.0.1-py3-none-any.whl
 ```
 

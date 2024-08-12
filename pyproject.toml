@@ -18,3 +18,7 @@ namespaces = false
 
 [project.scripts]
 fastpace = "fastpace.__main__:start"
+
+[project.optional-dependencies]
+dev = ["ruff"]
+fun = ["cowsay", "pnu-fortune"]
