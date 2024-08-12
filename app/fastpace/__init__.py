@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from fastpace.conf.settings import Settings
-from fastpace.routes import router
+from fastpace.interfaces.routes import router
 
 settings = Settings()
 
