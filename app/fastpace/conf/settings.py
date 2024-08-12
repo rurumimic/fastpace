@@ -26,7 +26,7 @@ class Settings(BaseSettings):
         # cli_avoid_json=True,
         # cli_enforce_required=True,
         secrets_dir=None,
-        yaml_file=["config.yaml"],
+        yaml_file=["conf/base.yaml", "conf/local.yaml"],
         yaml_file_encoding="utf-8",
     )
 
