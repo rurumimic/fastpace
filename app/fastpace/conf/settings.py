@@ -9,9 +9,9 @@ from pydantic_settings import (
 )
 
 
-class TempModel(BaseModel):
-    name: str = Field(default="")
-    value: float = Field(default=0.0)
+class ServiceModel(BaseModel):
+    name: str = Field(default="system")
+    location: str = Field(default="Metropolitan Area")
 
 
 class Settings(BaseSettings):
@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     description: str = Field(default="A simple API")
     version: str = Field(default="0.0.1")
 
-    temp: List[TempModel] = Field(default_factory=list)
+    service: ServiceModel = Field(default_factory=ServiceModel)
 
     @classmethod
     def settings_customise_sources(

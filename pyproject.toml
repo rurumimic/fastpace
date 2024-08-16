@@ -7,7 +7,9 @@ name = "fastpace"
 version = "0.0.1"
 dependencies = [
   "fastapi[standard]",
-  "pydantic-settings"
+  "pydantic-settings",
+  "attrs",
+  "dependency-injector"
 ]
 
 [tool.setuptools.packages.find]
