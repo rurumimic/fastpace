@@ -1,25 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Generic, List, TypeVar
 
-from fastpace.core.states import (
-    AlertState,
-    CockedPistol,
-    DoubleTake,
-    FadeOut,
-    FastPace,
-    RoundHouse,
-)
-
-S = TypeVar("S", bound=AlertState)
-N = TypeVar("N", bound=AlertState)
+from fastpace.core.states import (AlertState, CockedPistol, DoubleTake,
+                                  FadeOut, FastPace, RoundHouse)
 
 
 @dataclass
-class System(Generic[S]):
+class System[S: AlertState]:
     location: str
-    history: List[AlertState]
+    history: list[AlertState]
     state: S
 
     @classmethod
@@ -28,18 +18,18 @@ class System(Generic[S]):
         return System[FadeOut](location, [state], state)
 
     def to_double_take(self: System[FadeOut], t: str) -> System[DoubleTake]:
-        return self.update(DoubleTake(t))
+        return self._update(DoubleTake(t))
 
     def to_round_house(self: System[DoubleTake], t: str) -> System[RoundHouse]:
-        return self.update(RoundHouse(t))
+        return self._update(RoundHouse(t))
 
     def to_fast_pace(self: System[RoundHouse], t: str) -> System[FastPace]:
-        return self.update(FastPace(t))
+        return self._update(FastPace(t))
 
     def to_cocked_pistol(self: System[FastPace], t: str) -> System[CockedPistol]:
-        return self.update(CockedPistol(t))
+        return self._update(CockedPistol(t))
 
-    def update(self, next: N) -> System[N]:
+    def _update[N: AlertState](self, next: N) -> System[N]:
         self.history.append(next)
         return System(self.location, self.history, next)
 

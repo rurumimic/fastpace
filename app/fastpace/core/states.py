@@ -1,8 +1,7 @@
 from abc import ABC
 from dataclasses import dataclass
-from typing import TypeAlias
 
-Timestamp: TypeAlias = str
+type Timestamp = str
 
 
 class AlertState(ABC):
